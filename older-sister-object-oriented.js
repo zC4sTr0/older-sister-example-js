@@ -6,7 +6,7 @@ function Berti_member(name, age, height, birthday) { //object to store data of a
 }
 
 function getOlderBertiSister(array_berti_sisters) { //function which gets an array of berti_member objects and returns the one with older age
-  var index_older_sister = 0; //inder of older sister found
+  var index_older_sister = 0; //index of older sister found
   var temp_older_age_found_yet = 0; //to store the older age found yet
 
   for (var i = 0; i <= array_berti_sisters.length - 1; i++) {
