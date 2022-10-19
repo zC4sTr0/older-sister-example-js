@@ -2,7 +2,7 @@ const sister_names = ["luiza", "maria", "carla", "gabriela"];
 const sister_ages = [20, 25, 27, 23];
 
 function getOlderSister() {
-  var index_older_sister = 0; //inder of older sister found
+  var index_older_sister = 0; //index of older sister found
   var temp_older_age_found_yet = 0; //to store the older age found yet
   for (var i = 0; i < sister_ages.length - 1; i++) {
     if (sister_ages[i] > temp_older_age_found_yet) {
