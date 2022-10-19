@@ -1,11 +1,11 @@
-function Family_member(name, age, height, birthday) {
-  this.name = name;
-  this.age = age;
-  this.height = height;
-  this.birthday = birthday;
+function Berti_member(name, age, height, birthday) { //object to store data of an ordinary berti family member, we are using a function to start a new berti_member object
+  this.name = name; //initialize name variable in our object using function parameters
+  this.age = age; //initialize age variable in our object using function parameters
+  this.height = height; //initialize height variable in our object using function parameters
+  this.birthday = birthday; //initialize birthday variable in our object using function parameters
 }
 
-function getOlderBertiSister(array_berti_sisters) {
+function getOlderBertiSister(array_berti_sisters) { //function which gets an array of berti_member objects and returns the one with older age
   var index_older_sister = 0; //inder of older sister found
   var temp_older_age_found_yet = 0; //to store the older age found yet
 
@@ -16,15 +16,16 @@ function getOlderBertiSister(array_berti_sisters) {
       temp_older_age_found_yet = array_berti_sisters[i].age; //store older age found yet
     }
   }
-  return array_berti_sisters[index_older_sister];
+  
+  return array_berti_sisters[index_older_sister]; //return the object of the created Berti_member with older age
 }
 
-let array_berti_sisters = [];
-let luiza = new Family_member("luiza", 20, "1.65cm", "12/10/2002");
-let carla = new Family_member("carla", 23, "1.75cm", "12/10/1999");
-let maria = new Family_member("maria", 27, "1.67cm", "12/10/1995");
-array_berti_sisters.push(luiza, carla, maria);
+let array_berti_sisters = []; //empty array to store berti sisters
+let luiza = new Berti_member("luiza", 20, "1.65cm", "12/10/2002"); //create luiza family member
+let carla = new Berti_member("carla", 23, "1.75cm", "25/04/1999"); //create carla family member
+let maria = new Berti_member("maria", 27, "1.67cm", "03/12/1995"); //create maria family member
+array_berti_sisters.push(luiza, carla, maria); //add all sisters variables to array_berti_sisters array
 
-var older_berti_sister = getOlderBertiSister(array_berti_sisters);
+var older_berti_sister = getOlderBertiSister(array_berti_sisters); //get the older berti sister object
 console.log("Printing the older berti sister info: \n");
-console.log(older_berti_sister);
+console.log(older_berti_sister); //print the object
