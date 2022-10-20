@@ -1,11 +1,13 @@
-function Berti_member(name, age, height, birthday) { //object to store data of an ordinary berti family member, we are using a function to start a new berti_member object
+function Berti_member(name, age, height, birthday) {
+  //object to store data of an ordinary berti family member, we are using a function to start a new berti_member object
   this.name = name; //initialize name variable in our object using function parameters
   this.age = age; //initialize age variable in our object using function parameters
   this.height = height; //initialize height variable in our object using function parameters
   this.birthday = birthday; //initialize birthday variable in our object using function parameters
 }
 
-function getOlderBertiSister(array_berti_sisters) { //function which gets an array of berti_member objects and returns the one with older age
+function getOlderBertiSister(array_berti_sisters) {
+  //function which gets an array of berti_member objects and returns the one with older age
   var index_older_sister = 0; //index of older sister found
   var temp_older_age_found_yet = 0; //to store the older age found yet
 
@@ -16,8 +18,24 @@ function getOlderBertiSister(array_berti_sisters) { //function which gets an arr
       temp_older_age_found_yet = array_berti_sisters[i].age; //store older age found yet
     }
   }
-  
+
   return array_berti_sisters[index_older_sister]; //return the object of the created Berti_member with older age
+}
+
+function getYoungerBertiSister(array_berti_sisters) {
+  //function which gets an array of berti_member objects and returns the one with younger age
+  var index_younger_sister = 0; //index of younger sister found
+  var temp_younger_age_found_yet = 99; //to store the younger age found yet
+
+  for (var i = 0; i <= array_berti_sisters.length - 1; i++) {
+    if (array_berti_sisters[i].age < temp_younger_age_found_yet) {
+      //if current sister in loop is younger than the temp_younger_age_found_yet
+      index_younger_sister = i; //store index of younger sister in our array
+      temp_younger_age_found_yet = array_berti_sisters[i].age; //store younger age found yet
+    }
+  }
+
+  return array_berti_sisters[index_younger_sister]; //return the object of the created Berti_member with younger age
 }
 
 let array_berti_sisters = []; //empty array to store berti sisters
@@ -26,6 +44,8 @@ let carla = new Berti_member("carla", 23, "1.75cm", "25/04/1999"); //create carl
 let maria = new Berti_member("maria", 27, "1.67cm", "03/12/1995"); //create maria family member
 array_berti_sisters.push(luiza, carla, maria); //add all sisters variables to array_berti_sisters array
 
-var older_berti_sister = getOlderBertiSister(array_berti_sisters); //get the older berti sister object
 console.log("Printing the older berti sister info: \n");
-console.log(older_berti_sister); //print the object
+console.log(getOlderBertiSister(array_berti_sisters)); //print the object
+console.log("--------------------------------------------");
+console.log("Printing the younger berti sister info: \n");
+console.log(getYoungerBertiSister(array_berti_sisters)); //print the object
